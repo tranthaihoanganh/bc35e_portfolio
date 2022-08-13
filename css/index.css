@@ -1,0 +1,99 @@
+/* GLOBAL  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body{
+    font-family: 'Hind', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* HEADER  */
+
+/* chỉnh hình tròn cho indicators  */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+}
+/* trước hover  */
+#porNavbar .nav-link::after{
+    content: '' ;
+    width: 0%;
+    transition: all .5s;
+    height: 5px;
+    background-color:  #35a22c;
+    
+    display: block;
+}
+
+/* sau hover  */
+#porNavbar .nav-link:hover::after{
+    width: 100%;
+}
+
+#porNavbar .active .nav-link::after{
+    width: 100%;
+}
+
+/* CAROUSEL  */
+/* B1 : CHỈNH KÍCH THƯỚC ẢNH AVATA
+B2 : CHỈNH HÌNH NỀN (HEIGHR)
+B3 : CHỈNH CAPTION Ở GIỮA CAROUSEL
+B4 : CHỈNH HÌNH DẠN INDICATORS  */
+
+/* B1 : chỉnh kích thước ảnh AVATA  */
+.portAVATA{
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* B2 : CHỈNH HÌNH NỀN (HEIGHR) */
+/* VW (VIEWPROT WIDTH) : theo chiều ngang, dùng cho font size, khộng rớt xuống hàng nội dung (SLOGAN, BANER...) , lấy đơn vị đựa theo kích thước trình duyệt.
+VD: tuyển tình..
+    nguyện viên...
+        có kinh...
+để ko bị rớt xuống dòng (VW)
+
+VH  : dùng chiều cao 1 tấm hình. phũ diều nội dung tâm hình,kích thước tấm hình, lấy đơn vị đựa theo kích thước trình duyệt  */
+
+#portCarouselID .carousel-item{
+    /* 100vh luôn có % bằng với khung trình duyệt ko quan tâm cha con gì hết  */
+    height: 100vh;
+}
+
+#portCarouselID .carousel-item>img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+/* B3 : CHỈNH CAPTION Ở GIỮA CAROUSEL  */
+#portCarouselID .carousel-caption {
+    top: 50%;
+    left: 50%;
+
+    /* có thể sủ dụng transform canh chỉnh nội dung được  */
+    /* phải tuong úng với số top và left  */
+    /* thì hình sẽ ra giữa  */
+    transform: translate(-50%, -50%);
+}
+/* B4 : CHỈNH HÌNH DẠN INDICATORS  */
+
+#portCarouselID .carousel-indicators li{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+#portCarouselID .carousel-indicators li.active{
+    background-color: #35a22c;
+}
+
+
+   
+   
+   
